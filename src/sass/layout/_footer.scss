@@ -1,0 +1,140 @@
+.footer-top-side {
+  @include mobile-only {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+  @include tablet-only {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include desktop-only {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+}
+
+.logo-footer {
+  @include mobile-only {
+    margin-bottom: 20px;
+  }
+
+  @include tablet-only {
+    margin-right: auto;
+  }
+
+  @include desktop-only {
+    margin-right: 290px;
+  }
+}
+
+.footer-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.21;
+  letter-spacing: 0.08em;
+  color: var(--primary-title-color);
+
+  animation-duration: 1250ms;
+  transition: color 250ms var(--timing-function), transform 250ms var(--timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
+
+  @include mobile-only {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-right: 48px;
+
+    @include tablet-only {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    @include desktop-only {
+      font-size: 30px;
+      line-height: 1.23;
+    }
+  }
+}
+
+.footer-phone-icon {
+  margin-right: 10px;
+
+  animation-duration: 0ms;
+
+  @include tablet-only {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include desktop-only {
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &.shake {
+    animation-duration: 0s;
+    animation-timing-function: ease-in;
+
+    .footer-phone:hover &,
+    .footer-phone:focus & {
+      animation-duration: 3000ms;
+    }
+  }
+}
+
+.footer-instagram {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/icons/instagram.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media screen and (min-width: 768px) {
+    &::before {
+      @include pseudo;
+      top: 0;
+      left: -24px;
+      width: 1px;
+      height: 40px;
+
+      background-color: var(--primary-text-color);
+    }
+  }
+}
+
+.footer-bottom-side {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  background-color: var(--secondary-bg-color);
+}
+
+.footer-copyright {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--primary-text-color);
+
+  @include mobile-only {
+    text-align: center;
+  }
+}
